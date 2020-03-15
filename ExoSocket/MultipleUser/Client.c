@@ -24,6 +24,8 @@ int main(int argc, char* argv[]){
   //redefine ctrl+c
   signal(SIGINT, INThandler);
   char buffer[MAX_NAME_SZ];
+  if(argc != 2)
+    {fprintf(stderr,"Error argument\n"); return -1;}
   sd=socket(AF_INET, SOCK_STREAM, 0);
   if(sd==-1)
     {printf("bug 1");return -1;}
