@@ -70,11 +70,12 @@ void child(int sd){
 	INThandler(0);//clean
       }
     else
-      printf("\nserver : %s",buffer);
+      printf("\n%s",buffer);
   }
 }
 
 void INThandler(int sig){
-  printf("\nBye\n");
+  if(sig ==0)//only display when there is the main program who quit
+  	printf("\nBye\n");
   kill(0,SIGKILL);
 }
